@@ -1,0 +1,112 @@
+body {
+  background-image: linear-gradient(
+      rgba(0, 0, 50, 0.8),
+      rgba(166, 27, 200, 0.8)
+    ),
+    url("../images/movie5.jpeg");
+  position: relative;
+  background-size: 1680px 965px;
+  background-repeat: no-repeat;
+  font-family: "Merriweather Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#sign-up {
+  text-align: center;
+  color: deeppink;
+  font-size: 3rem;
+}
+.heading-msg {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
+.sign-up-msg {
+  text-align: center;
+  color: purple;
+  font-size: 1rem;
+  margin-bottom: 50px;
+}
+.sign-up-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-form {
+  background-color: white;
+  width: 400px;
+  border-radius: 8px;
+  padding: 20px 40px;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+}
+.input-container {
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+.input-text {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #dadce0;
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 0 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
+}
+::placeholder {
+  color: transparent;
+}
+.label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: white;
+  color: #dadce0;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
+.sign-up-button {
+  display: block;
+  padding: 15px 175px;
+  border: none;
+  background-color: #ff78c4;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+.sign-up-button:hover {
+  background-color: #9867c5;
+  transform: translateY(-2px);
+}
+.input-text:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: purple;
+}
+.input-text:focus {
+  border: 2px solid purple;
+}
+.input-text:not(:placeholder-shown) + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+}
