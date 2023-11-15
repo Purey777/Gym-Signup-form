@@ -4,56 +4,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customer Form</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap"
       rel="stylesheet"
     />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Personal styles css -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/69659439e3.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <h1 id="sign-up">Login to your Dragon Movies account</h1>
-    <div class="sign-up-form">
-      <form class="container-form" method="POST" , action="/">
-        <div class="input-container">
-          <input
-            type="text"
-            class="input-text"
-            name="email"
-            id=""
-            placeholder="a"
-            required
-          />
-          <label for="" class="label">
-            <i class="fa-solid fa-envelope"></i> Email</label
+    <section id="header">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand col-lg-8" href="">Dragon Movies</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-          <br />
-        </div>
+            <span class="navbar-toggler-icon"> </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto col-lg-4">
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cta">Download</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <h1 id="login">Welcome Back</h1>
+        <p class="heading-msg">Login to continue</p>
+        <div class="sign-up-form">
+          <form class="container-form" method="POST" , action="/">
+            <div class="input-container">
+              <input
+                type="text"
+                class="input-text"
+                name="email"
+                id=""
+                placeholder="a"
+                required
+              />
+              <label for="" class="label">
+                <i class="fa-solid fa-envelope"></i> Email</label
+              >
+              <br />
+            </div>
 
-        <div class="input-container">
-          <input
-            type="text"
-            class="input-text"
-            name="hashPassword"
-            id=""
-            placeholder="a"
-            required
-          />
-          <label for="" class="label">
-            <i class="fa-solid fa-lock"></i> Password</label
-          >
-          <br />
+            <div class="input-container">
+              <input
+                type="password"
+                class="input-text"
+                name="password"
+                id=""
+                placeholder="a"
+                required
+              />
+              <label for="" class="label">
+                <i class="fa-solid fa-lock"></i> Password</label
+              >
+              <br />
+            </div>
+            <input type="submit" class="sign-up-button" value="Login" />
+            <p class="sign-up-msg">
+              Don't have an account? <a href="/form">Sign Up</a>
+            </p>
+          </form>
         </div>
-        <input type="submit" class="sign-up-button" value="Login" />
-        <p class="sign-up-msg">
-          Don't have an account? <a href="/views/index.html">Sign Up</a>
-        </p>
-      </form>
-    </div>
+      </div>
+    </section>
+    <section>
+      
+    </section>
   </body>
 </html>

@@ -15,6 +15,7 @@ const customerSchema = new Schema({
     type: String,
     lowercase: true,
     required: true,
+    unique: true,
   },
   phone: {
     type: Number,
@@ -23,7 +24,6 @@ const customerSchema = new Schema({
   password: {
     type: String,
     required: true,
-    default: "Abc#123",
     trim: true,
     minLength: 6,
   },
@@ -32,12 +32,6 @@ const customerSchema = new Schema({
     required: false,
     default: Date.now,
   },
-});
-
-customerSchema.pre("save", async () => {
-  const user = this;
-  const hashedPassword = await bcrypt.hash(user["password"], 10);
-  user["password"] = hashedPassword;
 });
 
 const Customer = mongoose.model("customer", customerSchema);

@@ -1,7 +1,7 @@
 import Customer from "../../model/customer.model.js";
 import path from "path";
 import { fileURLToPath } from "url";
-import bcrypt from "bcrypt";
+import bcrypt, { genSalt } from "bcrypt";
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -20,6 +20,57 @@ export const getCustomers = async (req, res) => {
   }
 };
 
+export const loginForm = (req, res) => {
+  res.sendFile(path.resolve(__dirname + "../../../views/login.html"));
+};
+
+export const createCustomer = async (req, res) => {
+  const { firstName, lastName, email, phone, password: plainText } = req.body;
+
+  const password = await bcrypt.hash(plainText, 10);
+
+  const existingData = await Customer.findOne({ email });
+  if (existingData) {
+    return res.status(400).send("User with that email already exists.");
+  }
+
+  try {
+    const newUser = await Customer.create({
+      firstName,
+      lastName,
+      email,
+      phone,
+      password,
+    });
+    console.log(newUser);
+  } catch (error) {
+    console.log(error);
+    return newUser.json();
+  }
+  res
+    .status(201)
+    .sendFile(path.resolve(__dirname + "../../../views/success.html"));
+};
+
+export const loginUser = async (req, res) => {
+  const customer = await Customer.findOne({ email: req.body.email });
+
+  if (!customer) {
+    res.status(400).send("User not found");
+  }
+  try {
+    if (await bcrypt.compare(req.body.password, customer.password)) {
+      res.sendFile(
+        path.resolve(__dirname + "../../../views/loginSuccess.html")
+      );
+    } else {
+      res.status(400).send("Wrong email or password!");
+    }
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
+
 export const customerById = async (req, res) => {
   try {
     const customer = await Customer.findById(req.params.id);
@@ -29,20 +80,6 @@ export const customerById = async (req, res) => {
     res.send(customer);
   } catch (err) {
     res.status(400).send(err.message);
-  }
-};
-
-export const createCustomer = async (req, res) => {
-  const user = new Customer(req.body);
-  try {
-    await user.save();
-    res
-      .status(201)
-      .sendFile(path.resolve(__dirname + "../../../views/success.html"));
-    console.log(newUser);
-  } catch (err) {
-    res.status(500).send(err);
-    console.log(err.message);
   }
 };
 
@@ -56,6 +93,7 @@ export const updateCustomer = async (req, res) => {
     customer.lastName = req.body.lastName;
     customer.email = req.body.email;
     customer.phone = req.body.phone;
+    customer.password = req.body.password;
     customer.signUpDate = req.body.signUpDate;
     const updatedCustomer = await customer.save();
     res.send(`Customer updated!`);

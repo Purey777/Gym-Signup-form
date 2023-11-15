@@ -4,100 +4,200 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customer Form</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap"
       rel="stylesheet"
     />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Personal styles css -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/69659439e3.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <h1 id="sign-up">Sign up for Dragon Movies</h1>
-    <p class="heading-msg">Join us for free today!</p>
-    <div class="sign-up-form">
-      <form class="container-form" method="POST" , action="/">
-        <div class="input-container">
-          <input
-            type="text"
-            class="input-text"
-            name="firstName"
-            id=""
-            placeholder="a"
-            required
-          />
-          <label for="" class="label"
-            ><i class="fa-solid fa-user"></i> First Name</label
+    <!-- Title -->
+    <section id="header">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand col-lg-8" href="">Dragon Movies</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-          <br />
-          <small></small>
-        </div>
-        <div class="input-container">
-          <input
-            type="text"
-            class="input-text"
-            name="lastName"
-            id=""
-            placeholder="a"
-            required
-          />
-          <label for="" class="label">
-            <i class="fa-solid fa-user"></i> Last Name</label
-          >
-          <br />
-        </div>
+            <span class="navbar-toggler-icon"> </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto col-lg-4">
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cta">Download</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-        <div class="input-container">
-          <input
-            type="text"
-            class="input-text"
-            name="email"
-            id=""
-            placeholder="a"
-            required
-          />
-          <label for="" class="label">
-            <i class="fa-solid fa-envelope"></i> Email</label
-          >
-          <br />
+        <!-- Title -->
+
+        <div clas="row">
+                    <div class="col-lg-6">
+            <h1 id="sign-up">Sign up for free</h1>
+            <p class="heading-msg">Best place to escape your reality!</p>
+            <div class="sign-up-form">
+              <form class="container-form" method="POST" , action="/">
+                <div class="input-container">
+                  <input
+                    type="text"
+                    class="input-text"
+                    name="firstName"
+                    id=""
+                    placeholder="a"
+                    required
+                  />
+                  <label for="" class="label"
+                    ><i class="fa-solid fa-user"></i> First Name</label
+                  >
+                  <br />
+                  <small></small>
+                </div>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    class="input-text"
+                    name="lastName"
+                    id=""
+                    placeholder="a"
+                    required
+                  />
+                  <label for="" class="label">
+                    <i class="fa-solid fa-user"></i> Last Name</label
+                  >
+                  <br />
+                </div>
+    
+                <div class="input-container">
+                  <input
+                    type="text"
+                    class="input-text"
+                    name="email"
+                    id=""
+                    placeholder="a"
+                    required
+                  />
+                  <label for="" class="label">
+                    <i class="fa-solid fa-envelope"></i> Email</label
+                  >
+                  <br />
+                </div>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    class="input-text"
+                    name="phone"
+                    id=""
+                    placeholder="a"
+                    optional
+                  />
+                  <label for="" class="label"
+                    ><i class="fa-solid fa-phone"></i> Phone Number
+                    (optional)</label
+                  >
+                  <br />
+                </div>
+                <div class="input-container">
+                  <input
+                    type="password"
+                    class="input-text"
+                    name="password"
+                    id=""
+                    placeholder="a"
+                    required
+                  />
+                  <label for="" class="label">
+                    <i class="fa-solid fa-lock"></i> Password</label
+                  >
+                  <br />
+                </div>
+                <input type="submit" class="sign-up-button" value="Sign Up" />
+                <p class="sign-up-msg">
+                  Already have an account? <a href="/login">Login now</a>
+                </p>
+              </form>
+          </div>
         </div>
-        <div class="input-container">
-          <input
-            type="text"
-            class="input-text"
-            name="phone"
-            id=""
-            placeholder="a"
-            optional
-          />
-          <label for="" class="label"
-            ><i class="fa-solid fa-phone"></i> Phone Number (optional)</label
-          >
-          <br />
+        <div class="col-lg-6">
+          <img src="images/iphone6.png" class="rotated" alt="laptop-mockup">
         </div>
-        <div class="input-container">
-          <input
-            type="text"
-            class="input-text"
-            name="hashPassword"
-            id=""
-            placeholder="a"
-            required
-          />
-          <label for="" class="label">
-            <i class="fa-solid fa-lock"></i> Password</label
-          >
-          <br />
+      </div>
+      </div>
+    </section>
+
+    <!-- Latest Movies -->
+
+    <section id="movie-list">
+        <div class="row">
+          <div class="movie-column col-lg-2">
+            <img
+              class="img-movie"
+              src="/images/the-mother.jpg"
+              alt="the mother"
+            />
+          </div>
+          <div class="movie-column col-lg-2">
+            <img
+              class="img-movie"
+              src="/images/ballerina.jpg"
+              alt="ballerina"
+            />
+          </div>
+          <div class="movie-column col-lg-2">
+            <img class="img-movie" src="/images/hypnotic.jpg" alt="hypnotic" />
+          </div>
+          <div class="movie-column col-lg-2">
+            <img class="img-movie" src="/images/nyad.jpg" alt="nyad" />
+          </div>
+
+          <div class="movie-column col-lg-2">
+            <img class="img-movie" src="/images/burial.jpg" alt="the burial" />
+          </div>
+          <div class="movie-column col-lg-2">
+            <img
+              class="img-movie"
+              src="/images/johnWick.jpg"
+              alt="john wick 4"
+            />
+          </div>
         </div>
-        <input type="submit" class="sign-up-button" value="Sign Up" />
-        <p class="sign-up-msg">
-          Already have an account? <a href="/login">Login now</a>
-        </p>
-      </form>
-    </div>
+        </div>
+    </section>
   </body>
 </html>

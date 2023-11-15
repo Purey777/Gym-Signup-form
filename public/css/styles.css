@@ -1,36 +1,72 @@
 body {
-  background-image: linear-gradient(
-      rgba(0, 0, 50, 0.8),
-      rgba(166, 27, 200, 0.8)
-    ),
-    url("../images/movie5.jpeg");
-  position: relative;
-  background-size: 1680px 965px;
-  background-repeat: no-repeat;
-  font-family: "Merriweather Sans", sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  background-color: #ff78c4;
+  font-family: "Montserrat", sans-serif;
+}
+#movie-list {
+  background-color: #ffffffc7;
 }
 
-#sign-up {
+.container-fluid {
+  position: relative;
+  padding: 3% 15% 7%;
+}
+
+.rotated {
+  transform: rotate(25deg);
+  padding: 1% 3%;
+  position: absolute;
+}
+
+@media (max-width: 990px) {
+  #title {
+    text-align: center;
+  }
+  .rotated {
+    transform: rotate(0);
+    position: static;
+  }
+}
+
+.navbar {
+  padding-bottom: 4rem;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+}
+#sign-up,
+#login {
   text-align: center;
-  color: deeppink;
+  color: #fff;
   font-size: 3rem;
 }
-.heading-msg {
+
+.heading-msg,
+.login-msg {
   text-align: center;
   color: white;
-  font-size: 1.5rem;
-  margin-bottom: 50px;
+  font-size: 2rem;
+  font-style: italic;
+  margin: 25px;
 }
 
-.sign-up-msg {
-  text-align: center;
-  color: purple;
-  font-size: 1rem;
-  margin-bottom: 50px;
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .sign-up-form {
   display: flex;
   justify-content: center;
@@ -79,7 +115,7 @@ body {
 }
 .sign-up-button {
   display: block;
-  padding: 15px 175px;
+  padding: 15px 115px;
   border: none;
   background-color: #ff78c4;
   color: white;
@@ -109,4 +145,31 @@ body {
   z-index: 10;
   font-size: 14px;
   font-weight: 600;
+}
+
+.img-movie {
+  border: 1px solid #ff78c4;
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+.movie-column {
+  padding: 20px;
+}
+
+.login-msg span.blinking {
+  padding: 5px 18px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: red;
+  border-radius: 6px;
+}
+
+.blinking {
+  animation: backwards;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.container-fluid {
+  padding: 3% 15% 7%;
 }
